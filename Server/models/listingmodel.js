@@ -58,6 +58,9 @@ const listingSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
+
+listingSchema.set('toJSON', { virtuals: true });
+
 const Listing = mongoose.model('Listing', listingSchema);
 
 export default Listing;

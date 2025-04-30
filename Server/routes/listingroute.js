@@ -1,6 +1,7 @@
 import express from 'express';
 import { createListing, deleteListing, updateListing, getListing, getListings } from '../Controllers/ListingController.js';
 import { verifyToken } from '../Utills/verifyUser.js';
+import { handleErrors } from '../Utills/Error.js';
 
 const ListingRouter = express.Router();
 
@@ -9,5 +10,5 @@ ListingRouter.delete('/delete/:id', verifyToken, deleteListing);
 ListingRouter.post('/update/:id', verifyToken, updateListing);
 ListingRouter.get('/get/:id', getListing);
 ListingRouter.get('/get', getListings);
-
+ListingRouter.use(handleErrors);
 export default ListingRouter;

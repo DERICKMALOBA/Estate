@@ -12,6 +12,7 @@ import Listing from './Pages/Listing';
 import Search from './Pages/Search';
 import Rent from './Pages/Rent';
 import Buy from './Pages/Buy';
+import ReviewForm from './Components/Review';
 
 export default function App() {
   return (
@@ -25,6 +26,7 @@ export default function App() {
         <Route path='/search' element={<Search />} />
         <Route path='/rent' element={<Rent />} />
         <Route path='/buy' element={<Buy />} />
+        <Route path='/reviews' element={<ReviewForm />} />
         <Route path='/listing/:listingId' element={<Listing />} />
 
         <Route element={<PrivateRoute />}>

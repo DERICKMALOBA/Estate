@@ -45,9 +45,10 @@ export default function Listing() {
       }
 
       const reviewObj = {
+        username: currentUser.username,
         reviewText,
         rating,
-        listing: params.listingId
+        listingId: params.listingId
       };
 
       const res = await fetch('/api/review/create', {

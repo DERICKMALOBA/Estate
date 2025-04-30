@@ -16,19 +16,23 @@ export default function Home() {
       try {
         const offerResponse = await fetch('/api/listing/get?offer=true&limit=4');
         const offerData = await offerResponse.json();
-        setOfferListings(offerData);
-
+        console.log('offer data',offerData)
+        setOfferListings(Array.isArray(offerData) ? offerData : offerData.listings || []);
+    
         const rentResponse = await fetch('/api/listing/get?type=rent&limit=4');
         const rentData = await rentResponse.json();
-        setRentListings(rentData);
-
+        console.log('rent',rentData)
+        setRentListings(Array.isArray(rentData) ? rentData : rentData.listings || []);
+    
         const saleResponse = await fetch('/api/listing/get?type=sale&limit=4');
         const saleData = await saleResponse.json();
-        setSaleListings(saleData);
+        console.log("sales data", saleData)
+        setSaleListings(Array.isArray(saleData) ? saleData : saleData.listings || []);
       } catch (error) {
         console.error('Error fetching listings:', error);
       }
     };
+    
 
     fetchListings();
   }, []);

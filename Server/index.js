@@ -13,6 +13,9 @@ import useRouter from './routes/userroute.js';
 
 import ListingRouter from './routes/listingroute.js';
 
+import mpesaRouter from './routes/mpesaRoute.js'
+import ReviewRouter from './routes/reviewRoute.js'
+
 
 dotenv.config(); // Load environment variables
 
@@ -38,6 +41,9 @@ app.use('/api/user' , useRouter)
 
 
 app.use('/api/listing', ListingRouter)
+
+app.use('/api', mpesaRouter);
+app.use('/api/review', ReviewRouter)
 
 
 

@@ -45,7 +45,7 @@ function Header() {
           <div className="relative w-full">
             <input 
               type="text" 
-              placeholder="Search by name, location, or price..." 
+              placeholder="Search a home..." 
               className="bg-transparent focus:outline-none w-full sm:w-64 pl-4 pr-10" 
               value={searchTerm}
               onChange={(e) => setSearchTerm(e.target.value)} 

@@ -30,11 +30,6 @@ function SignUp() {
       const data = await res.json();
       console.log(data);
   
-      if (!data.success) {
-        setLoading(false);
-        setError(data.message); // Display the error message from the server
-        return;
-      }
   
       setLoading(false);
       setError(null);
