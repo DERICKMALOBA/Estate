@@ -361,7 +361,7 @@ export default function Listing() {
                                 <div className="flex items-start space-x-4">
                                   <div className="flex-shrink-0">
                                     <img
-                                      src={review.userAvatar || '/images/default-avatar.png'}
+                                      src={currentUser.avatar || '/images/default-avatar.png'}
                                       alt={review.username}
                                       className="h-10 w-10 rounded-full object-cover"
                                     />

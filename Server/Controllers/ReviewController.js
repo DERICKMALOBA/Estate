@@ -4,8 +4,7 @@ import Review from '../models/reviewModel.js';
 export const createReview = async (req, res) => {
   const { listing, rating, reviewText } = req.body;
 
-  // Debug: Check what user data is available
-  console.log("Request user object:", req.user);
+ 
 
   if (!listing || !rating || !reviewText) {
     return res.status(400).json({ message: 'All fields are required' });

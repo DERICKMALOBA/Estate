@@ -19,8 +19,7 @@ import ReviewRouter from './routes/reviewRoute.js'
 
 dotenv.config(); // Load environment variables
 
-console.log("JWT_SECRET_KEY:", process.env.JWT_SECRET);
-console.log("mongo:", process.env.MONGO_URL);
+
 mongoose.connect(process.env.MONGO_URL)
     .then(() => {
         console.log("Connected to MongoDB");
@@ -49,7 +48,7 @@ app.use('/api/review', ReviewRouter)
 
 // Correct the console.log to use process.env.PORT
 app.listen(process.env.PORT, () => {
-    console.log(`Server is running on http://localhost:${process.env.PORT}`);
+    console.log(`Server is running on port ${process.env.PORT}`);
 });
 
 // middleware to handle errors
